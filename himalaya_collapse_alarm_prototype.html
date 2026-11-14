@@ -123,7 +123,7 @@
   /* settings */
   .drawer { position:fixed; top:0; right:0; bottom:0; width:min(600px, 100%); background:#fff; border-left:1px solid var(--ink); padding:14px 16px 30px; overflow-y:auto; z-index:20; display:none; }
   .drawer.open { display:block; }
-  .about h3 { font-size:14px; margin:18px 0 6px; } .about p, .about li { font-size:13.5px; line-height:1.55; margin:0 0 8px; } .about ul, .about ol { margin:0 0 8px; padding-left:20px; } .about li { margin-bottom:5px; } .about a { color:inherit; }
+  .about h3 { font-size:14px; margin:18px 0 6px; } .about h4 { font-size:13.5px; margin:12px 0 6px; font-style:italic; } .about p, .about li { font-size:13.5px; line-height:1.55; margin:0 0 8px; } .about ul, .about ol { margin:0 0 8px; padding-left:20px; } .about li { margin-bottom:5px; } .about a { color:inherit; }
   .top .sp button + button { margin-left:-6px; }
   .drawer .head { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--ink); padding-bottom:8px; }
   .form { display:flex; flex-wrap:wrap; gap:8px 12px; align-items:end; padding:10px 0 4px; }
@@ -275,102 +275,127 @@
   <div class="head"><b>About</b><button id="btnCloseAbout" type="button">Close</button></div>
 
   <h3>What this is</h3>
-  <p>A student prototype. It watches four open seismic stations and two earthquake lists around the central Himalaya, and gives notice when a signal looks like a collapse of rock and ice and not like an earthquake. Its main point is that such a collapse can be seen in open data within seconds to minutes. It is not a warning system and must not be used as one.</p>
 
-  <h3>The logic in five steps</h3>
-  <ol>
-    <li><b>Phenomenon.</b> When rock and ice collapse in glacier terrain, a flood can follow down the valley. The earthquake lists first call it an earthquake.</li>
-    <li><b>Claim.</b> Open seismic stations show within seconds to minutes that it is a collapse and not an earthquake. So far this is shown for one collapse: played back, the record of 26 August 2026 raises the alarm at the station 57 km away, and a second station 132 km away recorded it clearly.</li>
-    <li><b>Device.</b> It judges every signal by the same rules and marks on the map roughly where it came from.</li>
-    <li><b>The person looking.</b> The map shows their own location together with the place of the signal, the rivers and the main roads.</li>
-    <li><b>Notice with safety advice.</b> The device says what was detected and how far away it is, with general safety advice: an advisory asks the viewer to stay away from riverbanks and be ready to move, and only an alert advises moving to high ground now. The decision remains with the viewer and local authorities.</li>
-  </ol>
+  <p>This device monitors four open seismic stations and two public earthquake catalogues (EMSC and USGS) across the central Himalaya. It raises an advisory or alert when a seismic signal resembles a collapse of rock and glacier ice, the kind of event that can turn into a deadly debris flow or flood downstream. The ground shakes the moment the mass breaks away, and nearby stations record it within seconds, while the water may take minutes to hours to reach the valleys below. Recognizing the collapse in that interval is what gives people time to prepare for an event of this severity, even while the catalogues still list it as an earthquake. In a replay of 26 August 2026, the device raised an advisory about two minutes after the collapse; Nepal's official alert went out about 38 minutes after it.</p>
 
   <h3>Why it was made</h3>
-  <p>On the morning of 26 August 2026 a flash flood came down the Lhende Khola into the Bhote Koshi and Trishuli rivers in Rasuwa district, Nepal, at the border with Tibet. Preliminary reports named an avalanche of ice and rock that may have blocked the Lhende Khola for a time. The cause was still being investigated when those reports were written, and they differ on which side of the border it began. At one gauge on the Trishuli the water rose by up to nine metres within 30 minutes. By the evening of 27 August Nepal's disaster authority had reported 359 bodies recovered.</p>
-  <p>The ground shook as well. The EMSC list has the event at 02:52:10 UTC (08:37 in Nepal) as a landslide of magnitude 5.2. USGS first listed a magnitude 4.4 earthquake and later changed its entry to a landslide. Station NK.KKN, 57 km away, recorded shaking for 8,040 seconds (2 h 14 min); an earthquake of that size at that distance would be over in about 643 seconds.</p>
-  <p>The course project behind this page asks where along the border between the Himalaya and Tibet a flood like this one could reach people before a warning does. This page covers the first part of that question: how fast, and how reliably, can open data show that a collapse has happened?</p>
 
-  <h3>The phenomenon</h3>
-  <p>When rock and glacier ice break off a steep mountain face, the mass can turn into a debris flow or a flood that runs far down the valley. It can also fall into a lake or block a river, so that the water comes later.</p>
+  <p>On the morning of 26 August 2026, a debris flow descended the Lhende Khola into the Bhote Koshi and Trishuli rivers in Rasuwa District, Nepal, on the border with Tibet. It began as a rock–ice avalanche from the north face of Langtang Lirung (7,227 m). USGS and ICIMOD place the source on the Nepali side; early reports placed it in Tibet, where the headwaters of the Lhende Khola lie. One analysis suggests that the rock failed on the previous afternoon, but most analyses interpret the signal at 08:37 as the collapse itself. A gauge on the Trishuli recorded a rise of up to nine metres within 30 minutes. By the evening of 27 August, Nepal's disaster management authority had reported 359 bodies recovered.</p>
+
+  <p>The collapse also produced a strong seismic signal. EMSC lists the event at 02:52:10 UTC (08:37 Nepal time) as a magnitude 5.2 landslide; USGS first listed a magnitude 4.4 earthquake and later reclassified it as a landslide. At station NK.KKN, 57 km away, ground motion lasted 8,040 seconds (2 h 14 min), against about 643 seconds expected for an earthquake of the same magnitude at that distance.</p>
+
+  <p>The course project behind this page asks where along the Himalaya–Tibet border a flood of this kind could reach people before a warning does. This page addresses the first part of that question: how quickly, and how reliably, can open data show that a collapse has occurred?</p>
+
+  <h4>The phenomenon</h4>
+
+  <p>When rock and glacier ice detach from a steep mountain face, the mass can entrain debris and water and evolve into a debris flow or flood that travels tens of kilometres down the valley. It may also fall into a glacial lake or dam a river, delaying the flood.</p>
+
   <ul>
-    <li>Chamoli, India, 7 February 2021: about 27 million m&sup3; of rock and glacier ice fell from Ronti Peak; more than 200 people were killed or are missing.</li>
-    <li>South Lhonak lake, Sikkim, 3 October 2023: 14.7 million m&sup3; of frozen moraine fell into the lake; the flood killed 55 people and left 74 missing.</li>
+    <li>Chamoli, India, 7 February 2021: about 27 million m³ of rock and glacier ice detached from Ronti Peak; more than 200 people were killed or remain missing.</li>
+    <li>South Lhonak Lake, Sikkim, 3 October 2023: 14.7 million m³ of frozen moraine collapsed into the lake; the outburst flood killed 55 people and left 74 missing.</li>
   </ul>
-  <p>Such a collapse shakes the ground differently from an earthquake: the shaking builds up slowly, lasts much longer and holds more very slow motion. Seismic stations record it within seconds, while the flood needs longer to reach the valley below. At Chamoli, stations up to about 100 km away recorded the event, and the flow took about 15 minutes to reach the Tapovan hydropower project.</p>
+
+  <p>Such collapses generate seismic signals that differ from those of earthquakes: an emergent onset, a long duration and a larger share of low-frequency energy. Nearby stations record them within seconds, whereas the flow takes much longer to reach the valleys downstream. At Chamoli, stations up to about 100 km away recorded the event, and the flow took about 15 minutes to reach the Tapovan hydropower project.</p>
+
+  <h3>The logic in five steps</h3>
+
+  <ol>
+    <li><b>Phenomenon.</b> A collapse of rock and glacier ice can turn into a debris flow or flood that travels far down the valley. Because it shakes the ground, earthquake detection systems first register it as an earthquake, and the catalogues list it as one. To show that it is not, the device cross-checks each catalogue entry against the recorded waveforms.</li>
+    <li><b>Claim.</b> Open seismic stations can show within minutes that a signal comes from a mass movement, not an earthquake. This has so far been demonstrated for one event: replaying the record of 26 August 2026, the device raises an advisory at station NK.KKN, 57 km from the source, about two minutes after the catalogued origin time, and station IO.EVN, 132 km away, also recorded the signal clearly, at about 250 times the background level.</li>
+    <li><b>Device.</b> Every signal is assessed against the same fixed criteria, and the approximate source region is shown on the map.</li>
+    <li><b>Viewer.</b> The map places the viewer's own location alongside the source region, rivers and main roads.</li>
+    <li><b>Notice with safety advice.</b> The device reports what was detected and how far away it is, with general safety advice: an advisory asks the viewer to stay away from riverbanks and be ready to move, and only an alert advises moving to high ground now. The decision remains with the viewer and local authorities.</li>
+  </ol>
 
   <h3>The area and what the device shows</h3>
-  <p>The area is the central Himalaya between Nepal, India, Bhutan and Tibet (25&ndash;33&deg;N, 78&ndash;94&deg;E), with the Bhote Koshi&ndash;Trishuli corridor in Rasuwa at its centre: the valley of the flood of 26 August 2026. The device is used on a screen or a phone by someone who keeps it open and watches. It puts six dimensions of this area on one map that are otherwise spread over separate sources.</p>
+
+  <p>The monitored region spans the central Himalaya across Nepal, India, Bhutan and Tibet (25–33°N, 78–94°E), centred on the Bhote Koshi–Trishuli corridor in Rasuwa, the valley struck on 26 August 2026. The device is meant to be kept open on a screen or phone. It brings together on one map six dimensions of the region that are otherwise scattered across separate sources.</p>
+
   <ul>
-    <li><b>Time.</b> Seismic stations record a collapse within seconds; the earthquake lists follow minutes later and may call it an earthquake; the water arrives downstream after that. On 26 August 2026 station NK.KKN recorded the first shaking 18 seconds after the listed start. The rings on the map show which stations are shaking now.</li>
-    <li><b>Distance.</b> So far a collapse has only been recorded within about 130 km of a station. The open stations therefore see about a third of Nepal and none of the Indian Himalaya or Bhutan.</li>
-    <li><b>Terrain.</b> Glaciers, contour lines and rivers show where rock and ice can break off and which valley the water would follow. An event counts as in glacier terrain within 15 km of a glacier.</li>
-    <li><b>Borders.</b> The flood of 2026 struck both sides of the border; the open live data do not reach across it. On 13 November 2026 the open live stream had no station in Tibet or Bhutan; the device uses four stations: two in Nepal, one in north-east India and one in Pakistan.</li>
-    <li><b>Roads and your location.</b> Main roads show how the valleys are connected. With &ldquo;My Location&rdquo; switched on, the map marks where the person looking is, and each warning gives the distance from there.</li>
-    <li><b>Weather.</b> Temperature and the rain and snow of the last seven days are shown as background: studies name long warming and warm or wet spells among the conditions under which such slopes fail.</li>
+    <li><b>Time.</b> Seismic stations record a collapse within seconds; the catalogues follow minutes later and may misclassify it; the water reaches downstream later still. On 26 August 2026, NK.KKN recorded the first ground motion 18 seconds after the catalogued origin time. Rings on the map mark stations that are recording an active signal.</li>
+    <li><b>Distance.</b> To date, a collapse has been recorded only within about 130 km of a station. The open stations therefore cover roughly a third of Nepal and none of the Indian Himalaya or Bhutan.</li>
+    <li><b>Terrain.</b> Glaciers, contours and rivers show where rock and ice may detach and which valley a flow would follow. An event is treated as lying in glacierized terrain if it is within 15 km of a mapped glacier.</li>
+    <li><b>Borders.</b> The 2026 flood affected both sides of the border, but open real-time data do not cross it. On 13 November 2026 the open real-time stream included no station in Tibet or Bhutan; the device uses four stations: two in Nepal, one in north-east India and one in Pakistan.</li>
+    <li><b>Roads and location.</b> Main roads show how the valleys are connected. When “My Location” is enabled, the map marks the viewer's position, and every advisory and alert states the distance from it.</li>
+    <li><b>Weather.</b> Current temperature and the past seven days of rain and snow are shown as background layers. Studies cite prolonged warming and warm or wet spells among the conditions that precede such slope failures.</li>
   </ul>
 
-  <h3>The decision it is meant to support</h3>
-  <p>The device gives notice with general safety advice; it does not issue orders. In the first minutes after the ground shakes, whoever looks at the map has one question to answer for themselves: does this concern me, and should I act before the lists and the river gauges confirm anything? The device puts what bears on that question on one screen, in this order.</p>
+  <h3>Supporting decisions in the first minutes</h3>
+
   <ol>
-    <li><b>Earthquake or collapse?</b> The signs of the signal: slow build-up, very slow shaking, long shaking, no fading.</li>
-    <li><b>Where?</b> Whether the place is glacier terrain, and the grey band on the map where the source can lie, to see which valley is below it.</li>
-    <li><b>Is it confirmed?</b> The network check: do the other stations show a signal at the same time?</li>
-    <li><b>How far from me?</b> With &ldquo;My Location&rdquo; on, each warning gives the distance to the listed place, or to the station that recorded the signal. Rivers and main roads show what lies between.</li>
+    <li><b>Earthquake or mass movement?</b> The signal characteristics: emergent onset, low-frequency content, long duration and sustained amplitude.</li>
+    <li><b>Where?</b> Whether the source lies in glacierized terrain, and the shaded source region on the map, which shows which valley lies below.</li>
+    <li><b>Is it corroborated?</b> Network association: whether other stations recorded a corresponding signal at the same time.</li>
+    <li><b>How far away?</b> With “My Location” enabled, each advisory and alert gives the distance to the catalogued epicentre or to the recording station; rivers and roads show what lies between.</li>
   </ol>
-  <p>A warning here means &ldquo;look now&rdquo;: the test results below show how often the rules are wrong. The device does not say where the water will go or when it arrives. Only an alert advises moving to high ground now; the decision remains with the viewer and local authorities. The map also supports a slower decision: where to add stations or share data across the border, because it shows where the reach of the open stations ends.</p>
+
+  <p>An advisory or alert means “look now”; the test results below show how often the criteria are wrong. The device does not predict where the water will go or when it will arrive. Only an alert advises moving to high ground now; the decision remains with the viewer and local authorities. The map also supports a slower decision: where to add stations or share data across the border, since it shows where the reach of the open stations ends.</p>
 
   <h3>How it works</h3>
-  <ol>
-    <li><b>Lists.</b> New entries of the EMSC and USGS earthquake lists for 25&ndash;33&deg;N, 78&ndash;94&deg;E are read as they appear.</li>
-    <li><b>Waveforms.</b> Four open stations (NK.KKN, IO.EVN, IN.SHL, II.NIL) are read over a live stream. A signal starts when the ground motion of the last 2 seconds is at least 4 times the background.</li>
-    <li><b>Signs.</b> Each signal is measured for four signs: slow build-up, very slow shaking (energy below 0.2 Hz), shaking that lasts longer than an earthquake of that size would, and shaking that does not fade.</li>
-    <li><b>Glacier map.</b> An event counts as in glacier terrain when it lies within 15 km of a glacier of the Randolph Glacier Inventory 7.0.</li>
-    <li><b>Levels.</b> Notice: a new list entry. Warning sign: a long, slow signal that is in no list yet, or a listed event that does not look like an ordinary earthquake. Alarm: two or more signs in glacier terrain, or shaking that has not stopped half an hour after it began. Advisories and alerts carry general safety advice and emergency numbers.</li>
-    <li><b>Network check.</b> Every warning names the other stations that recorded a signal at the same time, and the map shows in grey where the source can lie.</li>
-    <li><b>Your location.</b> Asked from the browser only when &ldquo;My Location&rdquo; is switched on. It is used in the page to draw the mark and to give distances; it is not stored and not sent anywhere.</li>
-  </ol>
 
-  <h3>How it was made</h3>
-  <ol>
-    <li><b>Maps.</b> Terrain, glaciers, rivers, borders and stations of the corridor were first mapped in QGIS for the course.</li>
-    <li><b>11 November 2026.</b> First version: one station (NK.KKN), the two lists and the glacier map. The limits were set from seven public records: the Rasuwa collapse and six earthquakes.</li>
-    <li><b>12 November.</b> Test with 100 listed earthquakes and four weeks of continuous record.</li>
-    <li><b>13 November.</b> Three more stations, the network check, the map drawn as lines from the QGIS data, rings around shaking stations, place names, weather maps, and a test of how far known collapses were recorded.</li>
-    <li><b>14 November.</b> Main roads, the location of the person looking with the distance in each warning, and a correction to the network check: a weak signal at a far station no longer keeps a clear station out.</li>
-  </ol>
-  <p>The page is one HTML file with no server of its own: the viewer's browser fetches the open data and does all the computing. The code was written and tested with Claude, an AI assistant by Anthropic, directed by the author.</p>
-
-  <h3>What the tests showed</h3>
   <ul>
-    <li><b>Earthquakes.</b> 39 of 61 listed earthquakes were judged ordinary, as they should be: 83% of those within 500 km of the station, 26% of those beyond 800 km (12 November 2026).</li>
-    <li><b>Reach for collapses.</b> The Rasuwa collapse was recorded clearly at 57 km and at 132 km and not at 697 km. The Chamoli collapse of 2021 was not found at 610 km or 710 km, and the South Lhonak collapse of 2023 gave only a weak signal at 136 km. So far a collapse has only been seen within about 130 km of a station (13 November 2026).</li>
-    <li><b>Place.</b> With two stations the grey band held the listed place for 22 of 23 events and covered about a third of the region: it narrows the search but does not give a place.</li>
+    <li><b>Catalogues.</b> New EMSC and USGS entries for 25–33°N, 78–94°E are read as they are published.</li>
+    <li><b>Waveforms.</b> Four open stations (NK.KKN, IO.EVN, IN.SHL and II.NIL) are received over a real-time stream. A detection begins when the short-term average over 2 seconds exceeds four times the long-term average over 180 seconds (STA/LTA).</li>
+    <li><b>Criteria.</b> Each detection is tested against four criteria: emergent onset (peak amplitude reached at least 15 seconds later than expected for an earthquake); low-frequency content (at least 30% of signal energy below 0.2 Hz); long duration (at least twice the duration expected for an earthquake of that magnitude and distance); and sustained amplitude (still at least three times background 30 minutes after onset).</li>
+    <li><b>Glacier inventory.</b> An event is treated as lying in glacierized terrain if it is within 15 km of a glacier in the Randolph Glacier Inventory 7.0.</li>
+    <li><b>Levels.</b> Notice: a new catalogue entry. Advisory: a long, low-frequency signal not yet in any catalogue, or a catalogued event that does not resemble an earthquake. Alert: two or more criteria met in glacierized terrain, or a signal still sustained 30 minutes after onset. Advisories and alerts carry general safety advice and emergency numbers.</li>
+    <li><b>Network association.</b> Each advisory and alert lists the other stations that recorded a corresponding signal, and the map shades the possible source region derived from arrival-time differences.</li>
+    <li><b>Viewer location.</b> Requested from the browser only when “My Location” is enabled, and used on the page only to draw the marker and compute distances; it is neither stored nor transmitted.</li>
   </ul>
 
-  <h3>What it cannot do</h3>
+  <h3>How it was made</h3>
+
   <ul>
-    <li>It cannot say how often it would catch a collapse: the limits were set with the only collapse recorded at the first station.</li>
-    <li>Collapses are only recorded near a station. About a third of Nepal (37%) lies within 132 km of one; no open live station stands that close to the Indian Himalaya or Bhutan.</li>
-    <li>It works only while the page is open, and the lists arrive minutes late.</li>
-    <li>It does not estimate where a flood would go or when it would arrive.</li>
-    <li>The map has main roads only. Hospitals, police and other public offices are not on it.</li>
-    <li>A far station can show a weak signal by chance at the same moment. In the record of 26 August 2026 station NIL, about 1,300 km away, did. Such a signal is kept apart from the clear ones, but it cannot always be told apart.</li>
-    <li>The weather maps are model estimates and take no part in the alarm rules.</li>
+    <li><b>Maps.</b> Terrain, glaciers, rivers, borders and stations of the corridor were first mapped in QGIS for the course.</li>
+    <li><b>11 November 2026.</b> First version: one station (NK.KKN), both catalogues and the glacier inventory. Thresholds were calibrated on seven public records: the Rasuwa collapse and six earthquakes.</li>
+    <li><b>12 November.</b> Tested on 100 catalogued earthquakes and four weeks of continuous records.</li>
+    <li><b>13 November.</b> Three further stations, network association, vector map layers from the QGIS data, station activity rings, place names, weather layers, and a test of the distances at which known collapses were recorded.</li>
+    <li><b>14 November.</b> Main roads, viewer location with distances in each advisory and alert, safety advice and emergency numbers in advisories and alerts, and a correction to network association: a weak coincident signal at a distant station no longer excludes a clear signal at a nearer one.</li>
+  </ul>
+
+  <p>The page is a single HTML file with no server of its own: the viewer's browser retrieves the open data and performs all computation. The code was written and tested with Claude, an AI assistant developed by Anthropic, under the author's direction.</p>
+
+  <h3>What the tests showed</h3>
+
+  <ul>
+    <li><b>Earthquakes.</b> Of 100 catalogued earthquakes (M 4–7), 61 were recorded at NK.KKN, and 39 of these (64%) were correctly classified as earthquakes. Accuracy falls with distance: 83% within 500 km of the station, 79% at 500–800 km and 26% beyond 800 km. Nineteen of the earthquakes would have raised an advisory and three an alert (12 November 2026).</li>
+    <li><b>False alerts.</b> Over four weeks of continuous records (13 October to 9 November 2026, 672 hours), with no known collapse in the region, the device would have raised 8 alerts and 38 advisories: about two alerts and nine advisories a week. All 7 alerts from catalogued events came from earthquakes more than 950 km from the station. Of 23 uncatalogued long, low-frequency signals, 10 were later matched to catalogued events, 9 to distant earthquakes, and 4 remained unexplained.</li>
+    <li><b>Detection range for collapses.</b> The Rasuwa collapse was recorded clearly at 57 km and 132 km, but not at 697 km. The 2021 Chamoli collapse was not detected at 610 km or 710 km, and the 2023 South Lhonak collapse produced only a weak signal at 136 km. To date, a collapse has been detected only within about 130 km of a station (13 November 2026).</li>
+    <li><b>Location.</b> With two stations, the shaded band contained the catalogued epicentre for 22 of 23 events and covered about a third of the region: it narrows the search but does not locate the source.</li>
+  </ul>
+
+  <p>These tests used a single station (NK.KKN). The network association added since then gives more information but does not change the levels.</p>
+
+  <h3>Limitations</h3>
+
+  <ul>
+    <li>It is a student prototype, not an official warning system: its advisories and alerts can be wrong and must not replace official warnings.</li>
+    <li>It cannot state a detection rate: the thresholds were set using the only collapse recorded at the first station.</li>
+    <li>It raises false alerts: about two a week in a four-week test, all from distant earthquakes.</li>
+    <li>Collapses are detected only near a station. About 37% of Nepal lies within 132 km of one; no open real-time station is that close to the Indian Himalaya or Bhutan.</li>
+    <li>It works only while the page is open, and catalogue entries arrive minutes late.</li>
+    <li>It does not estimate where a flood will go or when it will arrive.</li>
+    <li>The map shows main roads only; hospitals, police and other public facilities are not included.</li>
+    <li>A distant station can record an unrelated weak signal at the same moment. On 26 August 2026, II.NIL, about 1,300 km away, did so. Such signals are kept apart from clear ones, but they cannot always be distinguished.</li>
+    <li>The weather layers are model estimates and play no part in the detection criteria.</li>
   </ul>
 
   <h3>Sources</h3>
+
   <ul>
-    <li>26 August 2026: <a href="https://wmo.int/media/news/flood-tragedy-nepal-highlights-cross-border-and-cascading-risks" target="_blank" rel="noopener">World Meteorological Organization, 27 August 2026</a> (cause, water levels, the figure of 27 August); <a href="https://www.icimod.org/press-release/major-flash-flood-sweeps-through-nepals-rasuwa-district-raising-fears-of-further-downstream-flooding/" target="_blank" rel="noopener">ICIMOD press release</a>; <a href="https://heoc.mohp.gov.np/events" target="_blank" rel="noopener">Health Emergency Operation Center, Nepal</a>; <a href="https://www.icimod.org/?p=78368" target="_blank" rel="noopener">ICIMOD overview</a> (both sides of the border). Seismic times and lengths: EMSC and USGS lists and the record of NK.KKN, read by this page.</li>
+    <li>26 August 2026: <a href="https://wmo.int/media/news/flood-tragedy-nepal-highlights-cross-border-and-cascading-risks" target="_blank" rel="noopener">World Meteorological Organization, 27 August 2026</a> (cause, water levels, the figure of 27 August); <a href="https://www.icimod.org/press-release/major-flash-flood-sweeps-through-nepals-rasuwa-district-raising-fears-of-further-downstream-flooding/" target="_blank" rel="noopener">ICIMOD press release</a>; <a href="https://heoc.mohp.gov.np/events" target="_blank" rel="noopener">Health Emergency Operation Center, Nepal</a>; <a href="https://www.icimod.org/?p=78368" target="_blank" rel="noopener">ICIMOD overview</a> (source location and timing). Seismic times and lengths: EMSC and USGS lists and the record of NK.KKN, read by this page.</li>
     <li>Chamoli 2021: <a href="https://doi.org/10.1126/science.abh4455" target="_blank" rel="noopener">Shugar et al. (2021), Science</a>; <a href="https://doi.org/10.1126/science.abj1227" target="_blank" rel="noopener">Cook et al. (2021), Science</a>.</li>
     <li>South Lhonak 2023: <a href="https://doi.org/10.1126/science.ads2659" target="_blank" rel="noopener">Sattar et al. (2025), Science</a>.</li>
     <li>Safety advice: <a href="https://doi.org/10.3133/fs20223078" target="_blank" rel="noopener">USGS Fact Sheet 2022–3078</a>; <a href="https://www.cdc.gov/landslides-and-mudslides/index.html" target="_blank" rel="noopener">CDC, landslides and mudslides</a>; <a href="https://www.news.caloes.ca.gov/be-prepared-for-flooding-and-mudslides/" target="_blank" rel="noopener">Cal OES, flooding and mudslides</a>; <a href="https://dialogue.earth/en/climate/qa-there-was-a-gap-between-alert-and-action-in-nepal-floods/" target="_blank" rel="noopener">Dialogue Earth, interview with ICIMOD on the gap between alert and action</a>. Emergency numbers: <a href="https://www.gov.uk/foreign-travel-advice/nepal/getting-help" target="_blank" rel="noopener">GOV.UK, Nepal: getting help</a>; <a href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers" target="_blank" rel="noopener">list of emergency telephone numbers</a> (India, Bhutan, Tibet).</li>
-    <li>Test results: runs of this page's own code on public records, 12 and 13 November 2026. Data credits are under Settings.</li>
+    <li>Test results: runs of this page's own code on public records, 12–14 November 2026. Data credits are under Settings.</li>
   </ul>
-  <p class="cap">Developed in Where We Are, MTS 4, Fall 2026. Written on 13 November 2026.</p>
+
+  <p class="cap">Developed in Where We Are, MTS 4, Fall 2026. Last revised 14 November 2026.</p>
 
   <h3>Author</h3>
+
   <p>I am a graduate student at the University of Pennsylvania and, in Fall 2026, a visiting student at the Architectural Association (AA) School of Architecture in London. This device was developed in Where We Are, MTS 4.</p>
+
 </div>
 
 <div class="drawer" id="more">
